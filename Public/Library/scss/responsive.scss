@@ -1,0 +1,666 @@
+$res_375: "only screen and (min-width: 375px) and (max-width: 424px)";
+$res_425: "only screen and (min-width: 425px) and (max-width: 767px)";
+@mixin responsive_375() {
+    @media #{$res_375} {
+        @content;
+    }
+}
+
+@mixin responsive_425() {
+    @media #{$res_425} {
+        @content;
+    }
+}
+
+@include responsive_375 {
+    .container-fluid {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .row {
+        display: flex;
+    }
+    .menu {
+        max-width: 424px;
+        .logo {
+            .logofilm {
+                width: 50px;
+                margin-left: 15px!important;
+                margin-top: 25px!important;
+            }
+        }
+        .menuphim {
+            .list {
+                li {
+                    margin-top: 18px;
+                    margin-left: 5px;
+                    width: max-content;
+                    a {
+                        font-weight: 600;
+                        font-size: 8px;
+                    }
+                }
+                .dropdown.show {
+                    .dropdown-menu.show {
+                        transform: translate3d(-84px, 63px, 0px)!important;
+                        .dropdown-flex {
+                            .dropdown-1 {
+                                .dropdown-item {
+                                    color: white;
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .search {
+            display: flex;
+            color: white;
+            margin-top: 22px;
+            margin-left: 10px;
+            input.form-control.form-control-sm.mr-3.w-75 {
+                font-size: 3px;
+                color: white;
+                background-color: pink;
+                margin-top: 3px;
+            }
+            .fas.fa-search {
+                position: absolute;
+                font-size: 10px;
+                transform: translate(-7px, -3px)
+            }
+             ::placeholder {
+                font-size: 10px;
+            }
+        }
+        .login-register {
+            position: inherit;
+            margin-left: 0px;
+            transform: translate(-197px, -14px);
+            font-size: 7px;
+            a {
+                width: max-content;
+                padding-left: 20px;
+            }
+        }
+        #Name_GG,
+        #Logout_GG {
+            padding-left: 0px;
+        }
+    }
+    .main.one {
+        .nametypefilm1 {
+            .name {
+                h3 {
+                    font-size: 14px;
+                }
+            }
+        }
+        .nametypefilm2 {
+            .name {
+                h3 {
+                    font-size: 14px;
+                }
+            }
+        }
+        .row.one {
+            .col-sm-3 {
+                width: 50%!important;
+                padding-right: 0!important;
+                padding-left: 0!important;
+            }
+            .filmfirst {
+                img {
+                    width: 75%;
+                }
+                .content {
+                    display: block!important;
+                    .Book_favourist {
+                        .fa.fa-bookmark {
+                            position: relative!important;
+                            display: block!important;
+                            font-size: 20px;
+                            top: -4px !important;
+                            left: -60px !important;
+                        }
+                    }
+                    .fa.fa-play-circle {
+                        display: none;
+                        font-size: 73px !important;
+                    }
+                }
+            }
+            .filmfirst:hover {
+                z-index: 10;
+                transform: scale(1)!important;
+                transition: all 0.5s ease 0s;
+            }
+            .filmfirst:hover .content {
+                display: block;
+            }
+        }
+        //bắt dầu phim detail
+        .row {
+            .col-lg-8 {
+                width: 95%!important;
+                transform: translate(20px, 15px);
+                .infor-film {
+                    max-width: 367px;
+                    line-height: normal;
+                    .image-fiml {
+                        width: 42%;
+                        .press {
+                            visibility: visible;
+                            transform: translate(0, -210%);
+                            .btn.btn-warning {
+                                font-size: 7px;
+                            }
+                            .btn.btn-danger {
+                                font-size: 7px;
+                            }
+                        }
+                    }
+                    .meta-infor {
+                        transform: translate(57px, -10px);
+                        max-width: 145px;
+                        .name-film {
+                            font-size: 10px;
+                            margin-left: -135px;
+                        }
+                        .film-infor {
+                            margin-left: -135px;
+                            max-height: 205px;
+                            .film-infor-dl {
+                                .status,
+                                .national,
+                                .day,
+                                .time,
+                                .quality,
+                                .resolution,
+                                .language,
+                                .typefilm,
+                                .viewer {
+                                    .film-infor-dt {
+                                        width: max-content;
+                                    }
+                                    font-size: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+                h5 {
+                    font-size: 12px;
+                }
+                .content-film {
+                    max-width: 367px;
+                    p {
+                        font-size: 8px;
+                    }
+                }
+                .comments {
+                    max-width: 365px;
+                }
+            }
+            .col-md-3 {
+                padding-right: 0px;
+                .Manager_Top_FilmDetail {
+                    position: relative;
+                    transform: translate(0px, 20px);
+                    .top-film {
+                        .content-top-film {
+                            .viewer {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //kết thúc phim detail
+        //bat dau phim yeu thich
+        .col-lg-12 {
+            .where__contain_Film {
+                margin-top: 10px;
+                margin-left: 10px;
+                .image__farvorist__Film {
+                    img {
+                        width: 80px;
+                    }
+                }
+                .name__farvorist__Film {
+                    a {
+                        p {
+                            max-width: 150px;
+                            font-size: 13px;
+                            padding-left: 10px;
+                            padding-top: 30px;
+                        }
+                    }
+                }
+                .icon-del {
+                    transform: translate(310px, 29px);
+                }
+            }
+        }
+        //ket thuc phim yeu thich
+    }
+    .Additionaloptions {
+        padding-top: 3px!important;
+        padding-left: 30px!important;
+        .watchall {
+            font-size: 10px;
+        }
+        .Seemore {
+            font-size: 10px;
+            padding-left: 10px!important;
+        }
+    }
+    .Additionaloptions2 {
+        padding-top: 3px!important;
+        padding-left: 20px!important;
+        .watchall {
+            font-size: 10px;
+        }
+        .Seemore {
+            font-size: 10px;
+            padding-left: 10px!important;
+        }
+    }
+    button.btn.btn-dark.dropdown-toggle {
+        font-size: 9px;
+        transform: translate(5px, 18px);
+    }
+    .modal-dialog {
+        transform: translateX(35px);
+        margin: 0rem;
+    }
+    .footer {
+        .row {
+            margin-right: 0px!important;
+            .col-sm-12 {
+                .manager.footer {
+                    .dat {
+                        padding-left: 50px;
+                        .social1 {
+                            margin-top: 10px;
+                            .social-item.facebook1 {
+                                padding-right: 10px;
+                                .btn2 {
+                                    color: rgb(71, 187, 255);
+                                    i {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                            .social-item.google1 {
+                                padding-right: 10px;
+                                .btn3 {
+                                    color: pink;
+                                    i {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                            .social-item.twitter1 {
+                                @extend .social-item.facebook1;
+                                padding-right: 10px;
+                            }
+                            .social-item.youtube1 {
+                                padding-right: 10px;
+                                .btn1 {
+                                    color: tomato;
+                                    i {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .row {
+        .col-lg-8 {
+            .__xemphim_video_comment {
+                transform: translate(-32px, -43px);
+                max-width: 365px;
+            }
+        }
+        .col-md-3 {
+            .Manager_Top_Film {
+                transform: translateX(0px);
+            }
+        }
+    }
+}
+
+// responsive 425->767
+@include responsive_425() {
+    .container-fluid {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .row {
+        display: flex;
+    }
+    .menu {
+        max-width: 766px;
+        .logo {
+            .logofilm {
+                width: 50px;
+                margin-left: 15px!important;
+                margin-top: 25px!important;
+            }
+        }
+        .menuphim {
+            .list {
+                li {
+                    margin-top: 18px;
+                    margin-left: 20px;
+                    width: max-content;
+                    a {
+                        font-weight: 600;
+                        font-size: 8px;
+                    }
+                }
+                .dropdown.show {
+                    .dropdown-menu.show {
+                        transform: translate3d(-84px, 63px, 0px)!important;
+                        .dropdown-flex {
+                            .dropdown-1 {
+                                .dropdown-item {
+                                    color: white;
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .search {
+            display: flex;
+            color: white;
+            margin-top: 22px;
+            margin-left: 10px;
+            input.form-control.form-control-sm.mr-3.w-75 {
+                font-size: 3px;
+                color: white;
+                background-color: pink;
+                margin-top: 3px;
+            }
+            .fas.fa-search {
+                position: absolute;
+                font-size: 10px;
+                transform: translate(-7px, -3px)
+            }
+             ::placeholder {
+                font-size: 10px;
+            }
+        }
+        .login-register {
+            position: inherit;
+            margin-left: 0px;
+            transform: translate(-197px, -14px);
+            font-size: 7px;
+            a {
+                width: max-content;
+                padding-left: 20px;
+            }
+        }
+        #Name_GG,
+        #Logout_GG {
+            padding-left: 0px;
+        }
+    }
+    .main.one {
+        .nametypefilm1 {
+            .name {
+                h3 {
+                    font-size: 14px;
+                }
+            }
+        }
+        .nametypefilm2 {
+            .name {
+                h3 {
+                    font-size: 14px;
+                }
+            }
+        }
+        .row.one {
+            .col-sm-3 {
+                width: 50%!important;
+                padding-right: 0!important;
+                padding-left: 0!important;
+            }
+            .filmfirst {
+                img {
+                    width: 75%;
+                }
+                .content {
+                    display: block!important;
+                    .Book_favourist {
+                        .fa.fa-bookmark {
+                            position: relative!important;
+                            display: block!important;
+                            font-size: 20px;
+                            top: -18px !important;
+                            left: -65px !important;
+                        }
+                    }
+                    .fa.fa-play-circle {
+                        display: none;
+                        font-size: 73px !important;
+                    }
+                }
+            }
+            .filmfirst:hover {
+                z-index: 10;
+                transform: scale(1)!important;
+                transition: all 0.5s ease 0s;
+            }
+            .filmfirst:hover .content {
+                display: block;
+            }
+        }
+        //bắt dầu phim detail
+        .row {
+            .col-lg-8 {
+                width: 95%!important;
+                transform: translate(20px, 15px);
+                .infor-film {
+                    min-width: 100%;
+                    line-height: normal;
+                    .image-fiml {
+                        width: 42%;
+                        .press {
+                            visibility: visible;
+                            transform: translate(0, -210%);
+                            .btn.btn-warning {
+                                font-size: 7px;
+                            }
+                            .btn.btn-danger {
+                                font-size: 7px;
+                            }
+                        }
+                    }
+                    .meta-infor {
+                        transform: translate(57px, -10px);
+                        max-width: 145px;
+                        .name-film {
+                            font-size: 10px;
+                            margin-left: -135px;
+                        }
+                        .film-infor {
+                            margin-left: -135px;
+                            max-height: 205px;
+                            .film-infor-dl {
+                                .status,
+                                .national,
+                                .day,
+                                .time,
+                                .quality,
+                                .resolution,
+                                .language,
+                                .typefilm,
+                                .viewer {
+                                    .film-infor-dt {
+                                        width: max-content;
+                                    }
+                                    font-size: 8px;
+                                }
+                            }
+                        }
+                    }
+                }
+                h5 {
+                    font-size: 12px;
+                }
+                .content-film {
+                    p {
+                        font-size: 8px;
+                    }
+                }
+                .comments {}
+            }
+            .col-md-3 {
+                padding-right: 0px;
+                .Manager_Top_FilmDetail {
+                    position: relative;
+                    transform: translate(0px, 20px);
+                    .fb-page {
+                        display: none!important;
+                    }
+                    .top-film {
+                        .content-top-film {
+                            .viewer {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //kết thúc phim detail
+        //bat dau phim yeu thich
+        .col-lg-12 {
+            .where__contain_Film {
+                margin-top: 10px;
+                margin-left: 10px;
+                .image__farvorist__Film {
+                    img {
+                        width: 80px;
+                    }
+                }
+                .name__farvorist__Film {
+                    a {
+                        p {
+                            max-width: 150px;
+                            font-size: 13px;
+                            padding-left: 10px;
+                            padding-top: 30px;
+                        }
+                    }
+                }
+                .icon-del {
+                    transform: translate(310px, 29px);
+                }
+            }
+        }
+        //ket thuc phim yeu thich
+    }
+    .Additionaloptions {
+        padding-top: 3px!important;
+        padding-left: 95px!important;
+        .watchall {
+            font-size: 10px;
+        }
+        .Seemore {
+            font-size: 10px;
+            padding-left: 10px!important;
+        }
+    }
+    .Additionaloptions2 {
+        padding-top: 3px!important;
+        padding-left: 80px!important;
+        .watchall {
+            font-size: 10px;
+        }
+        .Seemore {
+            font-size: 10px;
+            padding-left: 10px!important;
+        }
+    }
+    button.btn.btn-dark.dropdown-toggle {
+        font-size: 9px;
+        transform: translate(5px, 18px);
+    }
+    .modal-dialog {
+        transform: translateX(35px);
+        margin: 0rem;
+    }
+    .footer {
+        .row {
+            margin-right: 0px!important;
+            .col-sm-12 {
+                .manager.footer {
+                    .dat {
+                        padding-left: 50px;
+                        .social1 {
+                            margin-top: 10px;
+                            .social-item.facebook1 {
+                                padding-right: 10px;
+                                .btn2 {
+                                    color: rgb(71, 187, 255);
+                                    i {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                            .social-item.google1 {
+                                padding-right: 10px;
+                                .btn3 {
+                                    color: pink;
+                                    i {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                            .social-item.twitter1 {
+                                // @extend .social-item.facebook1;
+                                padding-right: 10px;
+                            }
+                            .social-item.youtube1 {
+                                padding-right: 10px;
+                                .btn1 {
+                                    color: tomato;
+                                    i {
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .row {
+        .col-lg-8 {
+            .__xemphim_video_comment {
+                transform: translate(-32px, -43px);
+                max-width: 365px;
+            }
+        }
+        .col-md-3 {
+            .Manager_Top_Film {
+                transform: translateX(0px);
+            }
+        }
+    }
+}

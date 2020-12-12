@@ -1,0 +1,731 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    padding-right: 0px!important;
+    padding-left: 0px!important;
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+}
+
+.preloading {
+    overflow: hidden;
+}
+
+.animationloading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    z-index: 99999999999;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .obj {
+        width: 5px;
+        height: 30px;
+        margin: 0 2px;
+        border-radius: 5px;
+        animation: loading 1.2s infinite;
+    }
+    .obj:nth-child(1) {
+        animation-delay: 0.1s;
+        background-color: rgb(99, 235, 235);
+    }
+    .obj:nth-child(2) {
+        animation-delay: 0.2s;
+        background-color: pink;
+    }
+    .obj:nth-child(3) {
+        animation-delay: 0.3s;
+        background-color: red;
+    }
+    .obj:nth-child(4) {
+        animation-delay: 0.4s;
+        background-color: rgb(29, 246, 141);
+    }
+    .obj:nth-child(5) {
+        animation-delay: 0.5s;
+        background-color: yellow;
+    }
+    .obj:nth-child(6) {
+        animation-delay: 0.6s;
+        background-color: rgb(255, 196, 0);
+    }
+    .obj:nth-child(7) {
+        animation-delay: 0.7s;
+        background-color: rgb(174, 100, 243);
+    }
+    @keyframes loading {
+        0% {
+            height: 0;
+        }
+        50% {
+            height: 40px;
+        }
+        100% {
+            height: 0;
+        }
+    }
+}
+
+.menu {
+    position: relative;
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 65px;
+    z-index: 9999;
+    .logo {
+        .logofilm {
+            width: 100px;
+            margin-left: 25px;
+            margin-top: 15px;
+        }
+    }
+    .menuphim {
+        .list {
+            display: flex;
+            list-style: none;
+            li {
+                margin-top: 17px;
+                margin-left: 18px;
+                a {
+                    position: relative;
+                    text-decoration: none;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 12px;
+                    font-family: 'Times New Roman', Times, serif;
+                    transition: .6s all ease-in-out;
+                    .under-hover {
+                        position: relative;
+                        left: 0;
+                        top: 100%;
+                        width: 100%;
+                        height: 2px;
+                        background: pink;
+                        opacity: 0;
+                    }
+                }
+                a:hover {
+                    color: white!important;
+                    font-size: 10px;
+                }
+            }
+            li:hover {
+                transform: translateY(4px);
+            }
+            li:hover .under-hover {
+                animation-name: footer-border-bottom;
+                animation-duration: .8s;
+                animation-timing-function: ease-in-out;
+                opacity: 1;
+            }
+            @keyframes footer-border-bottom {
+                0% {
+                    width: 0;
+                    opacity: 0;
+                }
+                100% {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+            .dropdown.show {
+                .dropdown-menu.show {
+                    background-color: black;
+                    transform: translate3d(20px, 63px, 0px)!important;
+                    .dropdown-flex {
+                        .dropdown-1 {
+                            .dropdown-item {
+                                color: white;
+                            }
+                            .dropdown-item:hover {
+                                color: black!important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .search {
+        display: flex;
+        color: white;
+        margin-top: 14px;
+        margin-left: 25px;
+        .fas.fa-search {
+            color: white;
+        }
+    }
+    .login-register {
+        display: flex;
+        margin-top: 22px;
+        margin-left: 50px;
+        font-size: 12px;
+        height: 10px;
+        cursor: pointer;
+        .infor-heart-user {
+            color: white;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+            padding-left: 30px;
+            .infor-heart-user__hover {
+                display: grid;
+                opacity: 0;
+                background-color: black;
+                a {
+                    padding: 10px;
+                }
+                a:hover {
+                    opacity: 0.4;
+                }
+            }
+        }
+        a {
+            color: white;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+            padding-left: 30px;
+        }
+        a:hover {
+            text-decoration: none;
+            color: white;
+        }
+        .infor-heart-user:hover .infor-heart-user__hover {
+            transform: translateY(10px);
+            opacity: 1;
+            animation-name: infor-heart-user__hover;
+            animation-duration: .5s;
+            animation-timing-function: linear;
+        }
+        @keyframes infor-heart-user__hover {
+            0% {
+                height: 0%;
+                opacity: 0;
+            }
+            50% {
+                height: 50%;
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+                height: 100%;
+            }
+        }
+        .far.fa-heart {
+            color: white;
+            font-size: 15px;
+        }
+        .far.fa-heart:hover,
+        .fas.fa-users:hover {
+            font-size: 20px;
+            color: red;
+            animation-duration: 1s;
+            animation-name: heart_hover;
+            animation-timing-function: ease-in;
+        }
+        @keyframes heart_hover {
+            0% {
+                transform: rotate(-20deg);
+            }
+            100% {
+                transform: rotate(10deg);
+            }
+        }
+    }
+    #Name_GG,
+    #Logout_GG {
+        padding-left: 20px;
+        color: white;
+        transform: translate(90px, 18px);
+    }
+}
+
+button.btn.btn-dark.dropdown-toggle {
+    font-size: 10px;
+    transform: translate(10px, 15px);
+}
+
+.main.one {
+    position: relative;
+    background-color: #141414;
+    height: auto;
+    min-height: 333px;
+    z-index: 10;
+    // bắt đầu phim detail
+    .row {
+        margin-right: 0px!important;
+        .col-lg-8 {
+            padding-right: 0px !important;
+            .infor-film {
+                display: flex;
+                background-color: #222222;
+                border: 1px solid gray;
+                border-radius: 5px;
+                height: auto;
+                .image-fiml {
+                    width: 35%;
+                    padding-left: 23px;
+                    padding-top: 21px;
+                    padding-bottom: 21px;
+                    transition: 1.6s all ease-in;
+                    .press {
+                        display: flex;
+                        visibility: hidden;
+                        justify-content: center;
+                        transform: translate(0, -345%);
+                    }
+                }
+                .image-fiml:hover .press {
+                    visibility: visible;
+                    transition-delay: 0.5s;
+                }
+                .meta-infor {
+                    padding-left: 100px;
+                    .name-film {
+                        font-size: 21px;
+                        color: pink;
+                        padding-top: 21px;
+                    }
+                    .film-infor {
+                        background-color: black;
+                        width: auto;
+                        height: auto;
+                        padding-top: 10px;
+                        border: 1px solid gray;
+                        .film-infor-dl {
+                            padding-left: 10px;
+                            color: white;
+                            font-size: 17px;
+                            .status,
+                            .national,
+                            .day,
+                            .time,
+                            .quality,
+                            .resolution,
+                            .language,
+                            .typefilm,
+                            .viewer {
+                                display: flex;
+                                font-size: 13px;
+                            }
+                            .typefilm {
+                                .film-infor-dt {
+                                    min-width: max-content;
+                                }
+                                dd {
+                                    .film-infor-dd.type {
+                                        position: relative;
+                                        max-width: 247px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //kết thúc phim detail
+    .nametypefilm1 {
+        display: flex;
+        color: white;
+        padding: 33px;
+        .name {
+            h3 {
+                font-size: 19px;
+                color: white;
+                border-bottom: 2px solid pink;
+            }
+        }
+        .Additionaloptions {
+            display: flex;
+            padding-top: 5px;
+            padding-left: 768px;
+            font-size: 14px;
+            .watchall {
+                a {
+                    color: white;
+                }
+                a:hover {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+            .Seemore {
+                padding-left: 70px;
+                #xemthem {
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .row.one {
+        .col-sm-3 {
+            .filmfirst {
+                .content {
+                    display: none;
+                    color: white;
+                    justify-content: center;
+                    transform: translateY(-196px);
+                    .Book_favourist {
+                        .fa.fa-bookmark {
+                            color: white;
+                            font-size: 30px;
+                            position: absolute;
+                            top: -93px;
+                            left: 42px;
+                            cursor: pointer;
+                        }
+                    }
+                    .fa.fa-play-circle {
+                        position: absolute;
+                        font-size: 75px;
+                        color: white;
+                        transform: translateX(-35px);
+                    }
+                }
+                img {
+                    width: 75%;
+                }
+            }
+            .filmfirst:hover {
+                z-index: 10;
+                transform: scale(1.10);
+                transition: all 0.5s ease 0s;
+            }
+            .filmfirst:hover .content {
+                display: block;
+            }
+        }
+    }
+    .nametypefilm2 {
+        @extend .nametypefilm1;
+    }
+    .Additionaloptions2 {
+        display: flex;
+        padding-top: 5px;
+        padding-left: 743px;
+        font-size: 14px;
+        .watchall {
+            a {
+                color: white;
+            }
+            a:hover {
+                text-decoration: none;
+                color: white;
+            }
+        }
+        .Seemore {
+            padding-left: 70px;
+            #xemthem {
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+    //bắt đầu phim yêu thích
+    .col-lg-12 {
+        #nofi_del {
+            display: none;
+        }
+        .where__contain_Film {
+            display: flex;
+            margin-top: 20px;
+            margin-left: 20px;
+            .image__farvorist__Film {
+                img {
+                    width: 120px;
+                }
+            }
+            .name__farvorist__Film {
+                a {
+                    text-decoration: none;
+                    p {
+                        text-decoration: none;
+                        color: pink;
+                        font-weight: 600;
+                        padding-left: 30px;
+                        padding-top: 80px;
+                    }
+                }
+            }
+            .icon-del {
+                display: block;
+                position: absolute;
+                transform: translate(1150px, 80px);
+                font-size: 30px;
+                color: gray;
+                cursor: pointer;
+            }
+            .icon-del:hover {
+                color: red!important;
+            }
+        }
+    }
+    //kết thúc phim yêu thích
+}
+
+.form-elegant {
+    .font-small {
+        font-size: 0.8rem;
+    }
+    .z-depth-1a {
+        -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+        box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    }
+    .z-depth-1-half,
+    .form-elegant .btn:hover {
+        -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+        box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    }
+    .modal-header {
+        border-bottom: none;
+    }
+}
+
+.modal-dialog {
+    transform: translateX(83%);
+}
+
+.modal-dialog .form-elegant .btn .fab {
+    color: #2196f3!important;
+}
+
+.form-elegant .modal-body,
+.form-elegant .modal-footer {
+    font-weight: 400;
+}
+
+.modal-content {
+    width: 80% !important;
+}
+
+.modal-body {
+    padding: 0px !important;
+    .mb-5 {
+        margin-bottom: 1rem !important;
+    }
+    .pb-3 {
+        margin-bottom: 1rem !important;
+    }
+    p {
+        margin-bottom: 0px !important;
+    }
+}
+
+input.form-control.form-control-sm.mr-3.w-75 {
+    border: none;
+    color: white;
+    background-color: #00000000;
+    min-width: max-content;
+}
+
+.slider-film {
+    position: relative;
+    z-index: 10;
+}
+
+.footer {
+    background-color: #141414;
+    .manager.footer {
+        display: flex;
+        z-index: 10;
+        .logofooter {
+            padding-left: 50px;
+            margin-top: 85px;
+            .logofilm {
+                width: 100px;
+                margin-left: 10px;
+                margin-top: 25px;
+            }
+        }
+        .dat {
+            padding-left: 695px;
+            .social1 {
+                display: flex;
+                justify-content: center;
+                padding-top: 100px;
+                .social-item.facebook1 {
+                    padding-right: 40px;
+                    .btn2 {
+                        color: rgb(71, 187, 255);
+                        i {
+                            font-size: 40px;
+                        }
+                    }
+                    .btn2:hover {
+                        color: rgb(71, 187, 255);
+                    }
+                }
+                .social-item.google1 {
+                    padding-right: 40px;
+                    .btn3 {
+                        color: pink;
+                        i {
+                            font-size: 40px;
+                        }
+                    }
+                    .btn3:hover {
+                        color: pink;
+                    }
+                }
+                .social-item.twitter1 {
+                    @extend .social-item.facebook1;
+                    .btn2:hover {
+                        color: rgb(71, 187, 255);
+                    }
+                }
+                .social-item.youtube1 {
+                    padding-right: 40px;
+                    .btn1 {
+                        color: tomato;
+                        i {
+                            font-size: 40px;
+                        }
+                    }
+                    .btn1:hover {
+                        color: tomato;
+                    }
+                }
+                .social-item:hover {
+                    animation-name: socical__hover;
+                    animation-duration: 1s;
+                    animation-timing-function: ease;
+                }
+                @keyframes socical__hover {
+                    0% {
+                        transform: rotate(-10deg);
+                    }
+                    100% {
+                        transform: rotate(10deg);
+                    }
+                }
+            }
+            .footer-copyright {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+//phim detail
+.actor-actress {
+    .image-actor {
+        background-color: #222222;
+        img {
+            width: 14%;
+            margin-left: 100px;
+        }
+    }
+    .name-actor {
+        color: white;
+    }
+}
+
+.content-film {
+    background-color: #222222;
+    margin-top: 10px;
+    p {
+        color: white;
+        font-size: 15px;
+        padding: 5px;
+    }
+}
+
+.Manager_Top_FilmDetail {
+    transform: translate(70px, 48px);
+    .title {
+        display: flex;
+        padding-top: 43px;
+        padding-bottom: 20px;
+        h5 {
+            font-size: 16px;
+            color: pink;
+        }
+        .fa.fa-star {
+            color: orange;
+            padding-top: 3px;
+        }
+    }
+    .top-film {
+        display: flex;
+        background-color: #222222;
+        border: 1px solid white;
+        border-radius: 5px;
+        .image-top-film {
+            padding: 5px;
+            border-bottom: 1px solid white;
+        }
+        .content-top-film {
+            color: white;
+            padding-left: 15px;
+            padding-top: 15px;
+            .name,
+            .viewer {
+                color: aqua;
+            }
+        }
+    }
+}
+
+//xem phim
+.col-lg-8 {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+    transform: translate(50px, 47px);
+    .__xemphim_video_comment {}
+}
+
+.col-md-3 {
+    .Manager_Top_Film {
+        transform: translateX(70px);
+        .title {
+            display: flex;
+            padding-top: 43px;
+            padding-bottom: 20px;
+            h5 {
+                font-size: 16px;
+                color: pink;
+            }
+            .fa.fa-star {
+                color: orange;
+                padding-top: 3px;
+            }
+        }
+        .top-film {
+            display: flex;
+            background-color: #222222;
+            border: 1px solid white;
+            border-radius: 5px;
+            .image-top-film {
+                padding: 5px;
+                border-bottom: 1px solid white;
+            }
+            .content-top-film {
+                color: white;
+                padding-left: 15px;
+                padding-top: 15px;
+                .name,
+                .viewer {
+                    color: aqua;
+                }
+            }
+        }
+    }
+}
+
+//phim yêu thích
